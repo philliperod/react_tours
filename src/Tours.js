@@ -1,7 +1,7 @@
 import React from 'react';
 import Tour from './Tour';
 
-const Tours = ({ tours }) => {
+const Tours = ({ tours, removeTour }) => {
   return (
     <section>
       <div className="title">
@@ -10,7 +10,7 @@ const Tours = ({ tours }) => {
       </div>
       <div>
         {tours.map((tour) => {
-          return <Tour key={tour.id} {...tour} />;
+          return <Tour key={tour.id} {...tour} removeTour={removeTour} />;
         })}
       </div>
     </section>
@@ -19,5 +19,5 @@ const Tours = ({ tours }) => {
 
 export default Tours;
 
-// now that you have obtained the data from the url and parsed it into json, you'll take that state value and use the map() method to iterate over the array
-// in the map() method, you'll return the Tour component which you set the key attribute to the id in the array and use the spread operator to expand it
+// you'll destructure it into your Tours component parameter
+// add the prop into the Tour component
