@@ -38,6 +38,19 @@ function App() {
     );
   }
 
+  if (tours.length === 0) {
+    return (
+      <main>
+        <div className="title">
+          <h2>no tours left</h2>
+          <button className="btn" onClick={fetchTours}>
+            Refresh List
+          </button>
+        </div>
+      </main>
+    );
+  }
+
   return (
     <main>
       <Tours tours={tours} removeTour={removeTour} />
@@ -47,14 +60,4 @@ function App() {
 
 export default App;
 
-// now adding a functionality to remove individual tours when clicked on "not interested"
-// also adding another functionality to refresh the whole list again once all is cleared
-// you'll setup this removeTour function in the App.js because this is where you have your tours data that was fetched from a url
-// and you need to be able to pass this removeTour function all the way to the Tour component because that is where you will need the id
-// that removeTour function will be looking for that destructured id and so it knows which tour to remove
-// you'll pass the id in the parameter of that removeTour function
-// you'll create a variable that has a filter() method
-// if the tour id does not match then store it in the variable newTours
-// if the tour id matches then that is the tour that is going to be removed
-// next question: how to get removeTour function down to the Tour component?
-// you just have to pass it as a prop (removeTour={removeTour})
+// setup a button that will refresh the list
