@@ -60,4 +60,5 @@ function App() {
 
 export default App;
 
-// setup a button that will refresh the list
+// setup a button that will refresh the list based on a condition
+// you can reference the fetchTours function for the onClick
